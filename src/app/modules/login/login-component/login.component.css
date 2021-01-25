@@ -173,14 +173,14 @@ button:hover {
   font-weight: bold;
 }
 
-.mt-3 {
-  margin-top: 100px;
-}
-
 .ui-g-12 {
   padding: 15px;
 }
 
 .w-100 {
   width: 80%;
+}
+
+.mart{
+  margin-top: 150px;
 }
