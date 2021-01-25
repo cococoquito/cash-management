@@ -13,9 +13,9 @@ export const ROUTES: Routes = [
     loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule)
   },
   {
-    path: RouterConstant.ROUTER_AUTENTICADO,
+    path: RouterConstant.ROUTER_AUTHENTICATED,
     data: { preload: true },
-    loadChildren: () => import('./modules/authenticated/authenticated.module').then(m => m.AutenticadoModule)
+    loadChildren: () => import('./modules/authenticated/authenticated.module').then(m => m.AuthenticatedModule)
   },
   {
     path: '',

@@ -4,132 +4,57 @@
   <!-- panel formulario -->
   <div class="pnl-2">
 
-    <!-- panel imagen -->
-    <div class="img-login">
-      <img src="assets/login/logo-login@3x.png" srcset="assets/login/logo-login@2x.png 2x,assets/login/logo-login@3x.png 3x" class="logo-login"/>
-    </div>
-
     <!-- formulario ingreso informacion -->
     <form
-    #formLogin="ngForm" name="formLogin"
-    (ngSubmit)="beforeIniciarSesion() && formLogin.form.valid && iniciarSesion(formLogin)"
+    name="formLogin"
+    (ngSubmit)="iniciarSesion()"
     novalidate>
 
       <!-- panel ingreso informacion -->
       <div class="ui-g container">
 
-        <!-- titulo -->
-        <div *ngIf="!esPrimeraVez" class="ui-g-12 subtitle">
-          <p class="mb-0 font-size-16">¡Empieza a manejar tus</p>
-          <p class="mb-0">transacciones de forma eficiente!</p>
-        </div>
-        <div *ngIf="esPrimeraVez" class="ui-g-12 subtitle">
-          <p class="mb-0 font-size-16">¡Bienvenido!</p>
-          <p class="mb-0">Debe actualizar su contraseña</p>
-        </div>
-
         <!-- nombre usuario -->
-        <div *ngIf="!esPrimeraVez" class="ui-g-12 mt-3">
+        <div class="ui-g-12 mt-3">
           <div class="inner-addon left-addon">
             <i class="fa fa-user font-size-16 aico"></i>
             <input
-              [(ngModel)]="credenciales.usuarioIngreso"
               type="text"
               id="username"
               name="username"
               autocomplete="off"
-              #username="ngModel"
               appRequired
               appAutofocus
               class="w-100"
-              placeholder="Nombre de Usuario"
-              [ngClass]="{'requerido' : (formLogin.submitted && !username.valid)}"/>
+              placeholder="Nombre de Usuario"/>
           </div>
         </div>
 
         <!-- password -->
-        <div *ngIf="!esPrimeraVez" class="ui-g-12">
+        <div class="ui-g-12">
           <div class="inner-addon left-addon">
             <i (mousedown)="inclave.type='text'" (mouseup)="inclave.type='password'" (mouseover)="inclave.type='password'" class="fa fa-eye font-size-16 aico-eye"></i>
             <input
-              [(ngModel)]="credenciales.claveIngreso"
               type="password"
               #inclave
               id="clave"
               name="clave"
               autocomplete="off"
-              #clave="ngModel"
               appRequired
               class="w-100"
-              placeholder="Contraseña"
-              [ngClass]="{'requerido' : (formLogin.submitted && !clave.valid)}"/>
-          </div>
-        </div>
-
-          
-        <!-- actualizar password -->
-        <div *ngIf="esPrimeraVez" class="ui-g-12">
-          <div class="inner-addon left-addon">
-            <i (mousedown)="inactContra.type='text'" (mouseup)="inactContra.type='password'" (mouseover)="inactContra.type='password'" class="fa fa-eye font-size-16 aico-eye"></i>
-            <input
-              [(ngModel)]="actContrasena"
-              type="password"
-              #inactContra
-              id="actContra"
-              name="actContra"
-              autocomplete="off"
-              #actContra="ngModel"
-              appRequired
-              class="w-100"
-              placeholder="Nueva contraseña"
-              [ngClass]="{'ad-input-required' : !actContrasena && isGuardar}"/>
-          </div>
-        </div>
-        <!-- Repetir contraseña -->
-        <div *ngIf="esPrimeraVez" class="ui-g-12">
-          <div class="inner-addon left-addon">
-            <i (mousedown)="invalclave.type='text'" (mouseup)="invalclave.type='password'" (mouseover)="invalclave.type='password'" class="fa fa-eye font-size-16 aico-eye"></i>
-            <input
-              [(ngModel)]="validarContrasena"
-              type="password"
-              #invalclave
-              id="valclave"
-              name="valclave"
-              autocomplete="off"
-              #valclave="ngModel"
-              appRequired
-              class="w-100"
-              placeholder="Repita contraseña"
-              [ngClass]="{'ad-input-required' : !validarContrasena && isGuardar}"/>
+              placeholder="Contraseña"/>
           </div>
         </div>
 
         <!-- btn inicio sesion -->
         <div class="ui-g-12 mb-0 pb-0 text-center">
-          <div *ngIf="!esPrimeraVez" class="inner-addon left-addon">
+          <div class="inner-addon left-addon">
             <i class="fa fa-user-circle aico user-icon"></i>
             <button type="submit" class="btn btn-primary w-100">
               <span class="font-new-roman mr-2 font-size-12 font-weight-bold">INICIAR SESIÓN</span>
             </button>
-            <p class="mb-0 li mt-2">Recuperar contraseña</p>
-          </div>
-          <div *ngIf="esPrimeraVez" class="inner-addon left-addon">
-            <i class="fa fa-user-circle aico user-icon"></i>
-            <button type="button" class="btn btn-primary w-100"  (click)="actualizarContra()">
-              <span class="font-new-roman mr-2 font-size-12 font-weight-bold">Actualizar contraseña</span>
-            </button>
           </div>
         </div>
       </div>
-    </form>
-
-    <!-- msj error -->
-    <div id="btnMargin"><p class="text-danger text-center font-new-roman">{{msjError}}</p></div>
-    
-  </div>
-
-  <!-- footer del login -->
-  <div class="footer">
-    <p class="mb-0">Copyright companyname.co - 2020</p>
+    </form>    
   </div>
 </div>

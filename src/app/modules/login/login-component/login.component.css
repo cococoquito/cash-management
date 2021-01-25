@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(/assets/login/2752811.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -57,6 +56,7 @@
   padding-left: 10px;
   padding-right: 10px;
   margin-top: 1rem;
+  text-align: center;
 }
 
 .subtitle {
@@ -171,4 +171,16 @@ button:hover {
 #btnMargin {
   margin-top: 10px;
   font-weight: bold;
+}
+
+.mt-3 {
+  margin-top: 100px;
+}
+
+.ui-g-12 {
+  padding: 15px;
+}
+
+.w-100 {
+  width: 80%;
 }
