@@ -8,7 +8,7 @@ import { of } from 'rxjs/internal/observable/of';
  * que tiene la marca de preload=true
  */
 @Injectable()
-export class SelectivePreload implements PreloadingStrategy {
+export class SelectivePreloadService implements PreloadingStrategy {
 
   /**
    * Metodo que permite validar si un modulo se puede

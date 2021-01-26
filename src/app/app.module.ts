@@ -5,7 +5,8 @@ import { ROUTES } from './app-routing';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SelectivePreload } from './services/transversal/selective-preload';
+import { SelectivePreloadService } from './services/transversal/selective-preload.service';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 /**
  * Modulo principal de la aplicacion, contiene
@@ -13,16 +14,17 @@ import { SelectivePreload } from './services/transversal/selective-preload';
  */
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SpinnerComponent
   ],
   imports: [
-    RouterModule.forRoot(ROUTES, { preloadingStrategy: SelectivePreload }),
+    RouterModule.forRoot(ROUTES, { preloadingStrategy: SelectivePreloadService }),
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule
   ],
   providers: [
-    SelectivePreload
+    SelectivePreloadService
   ],
   bootstrap: [ 
     AppComponent
