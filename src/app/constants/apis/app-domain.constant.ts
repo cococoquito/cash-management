@@ -6,5 +6,5 @@ import { environment } from '../../../environments/environment';
 export class AppDomainConstant {
 
   /** Dominio del gateway */
-  static readonly URI_GATEWAY: string = 'http://localhost:8181/';
+  static readonly URI_GATEWAY: string = environment.serverApiUrl;
 }
