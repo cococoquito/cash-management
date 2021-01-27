@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
 import { ROUTES } from './app-routing';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectivePreloadService } from './services/transversal/selective-preload.service';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { RootComponent } from './components/root/root.component';
 
 /**
  * Modulo principal de la aplicacion, contiene
@@ -14,7 +14,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
  */
 @NgModule({
   declarations: [
-    AppComponent,
+    RootComponent,
     SpinnerComponent
   ],
   imports: [
@@ -27,7 +27,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     SelectivePreloadService
   ],
   bootstrap: [ 
-    AppComponent
+    RootComponent
   ]
 })
 export class AppModule { }
