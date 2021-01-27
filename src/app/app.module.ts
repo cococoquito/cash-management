@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ROUTES } from './app-routing';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectivePreloadService } from './services/transversal/selective-preload.service';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { RootComponent } from './components/root/root.component';
+import { HttpRequestInterceptor } from './interceptors/http-request.interceptor';
 
 /**
  * Modulo principal de la aplicacion, contiene
@@ -24,6 +25,11 @@ import { RootComponent } from './components/root/root.component';
     BrowserAnimationsModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpRequestInterceptor,
+      multi: true
+    },
     SelectivePreloadService
   ],
   bootstrap: [ 
