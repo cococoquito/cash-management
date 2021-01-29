@@ -18,8 +18,17 @@ export const ROUTES: Routes = [
     loadChildren: () => import('./modules/authenticated/authenticated.module').then(m => m.AuthenticatedModule)
   },
   {
+    path: RouterConstant.ROUTER_ERROR,
+    loadChildren: () => import('./modules/error-pages/error-pages.module').then(m => m.ErrorPagesModule)
+  },
+  {
     path: '',
     redirectTo: RouterConstant.ROUTER_LOGIN,
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: RouterConstant.ROUTER_ERROR,
     pathMatch: 'full'
   }
 ];

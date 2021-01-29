@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { AutenticacionAPIConstant } from 'src/app/constants/apis/seguridad/autenticacion-api.constant';
-import { AutenticacionResponseDTO } from 'src/app/dtos/seguridad/autenticacion-response.dto';
+import { AuthenticationResponseDTO } from 'src/app/dtos/security/authentication-response.dto';
+import { AuthenticationAPIConstant } from 'src/app/constants/apis/security/authentication-api.constant';
 
 /**
  * Clase que contiene los procesos de negocio para la autenticacion en el sistema
  */
 @Injectable()
-export class SeguridadService {
+export class SecurityService {
 
   /**
    * @param HTTP para hacer las peticiones a los servicios REST
@@ -21,9 +21,9 @@ export class SeguridadService {
    * @param credenciales, contiene las credenciales del USER
    * @return DTO con los datos inciales
    */
-  public iniciarSesion(data: AutenticacionResponseDTO): Observable<AutenticacionResponseDTO> {
-    return this.http.post<AutenticacionResponseDTO>(
-      AutenticacionAPIConstant.URL_LOGIN,
+  public iniciarSesion(data: AuthenticationResponseDTO): Observable<AuthenticationResponseDTO> {
+    return this.http.post<AuthenticationResponseDTO>(
+      AuthenticationAPIConstant.URL_LOGIN,
       data
     );
   }

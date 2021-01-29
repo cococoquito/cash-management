@@ -12,6 +12,12 @@ export class RouterConstant {
   /** Router para la pagina de BIENVENIDA*/
   public static readonly ROUTER_WELCOME: string = 'welcome';  
 
+  /** Router para la pagina de error cuando el usuario no tiene permisos */
+  public static readonly ROUTER_DENIED: string = 'denied';
+  
+  /** Router para el modulo del PAGINAS DE ERRORES */
+  public static readonly ROUTER_ERROR: string = 'error';  
+
   /** Constante para navegar a la pagina de BIENVENIDA */
   public static readonly NAVIGATE_WELCOME: string = `/${RouterConstant.ROUTER_AUTHENTICATED}/${RouterConstant.ROUTER_WELCOME}`;  
 }

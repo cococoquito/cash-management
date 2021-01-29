@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterConstant } from 'src/app/constants/router.constant';
 import { Router } from '@angular/router';
-import { SeguridadService } from 'src/app/services/login/seguridad.service';
-import { AutenticacionResponseDTO } from 'src/app/dtos/seguridad/autenticacion-response.dto';
+import { SecurityService } from 'src/app/services/login/security.service';
+import { AuthenticationResponseDTO } from 'src/app/dtos/security/authentication-response.dto';
 
 /**
  * Componente para la autenticacion del sistema
@@ -10,7 +10,7 @@ import { AutenticacionResponseDTO } from 'src/app/dtos/seguridad/autenticacion-r
 @Component({
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [ SeguridadService ],
+  providers: [ SecurityService ],
 })
 export class LoginComponent implements OnInit {
 
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
    */
   constructor(
     private router: Router,
-    private seguridadService: SeguridadService) {}
+    private securityService: SecurityService) {}
   
   /**
    * Aca se debe inicializar las variables globales del LOGIN
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
    */
   public iniciarSesion(): void {
 
-    this.seguridadService.iniciarSesion(new AutenticacionResponseDTO()).subscribe(
+    this.securityService.iniciarSesion(new AuthenticationResponseDTO()).subscribe(
       data => {
         // se redirecciona a la pagina de welcome
         this.router.navigate([RouterConstant.NAVIGATE_WELCOME]);
