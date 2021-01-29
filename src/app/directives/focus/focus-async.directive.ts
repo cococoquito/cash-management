@@ -6,9 +6,9 @@ import { Directive, AfterViewInit, ElementRef } from '@angular/core';
  * de inmediato
  */
 @Directive({
-  selector: '[appAutofocusAsync]'
+  selector: '[appFocusAsync]'
 })
-export class AutofocusAsyncDirective implements AfterViewInit {
+export class FocusAsyncDirective implements AfterViewInit {
   constructor(private el: ElementRef) {}
   ngAfterViewInit() {
     setTimeout(() => {

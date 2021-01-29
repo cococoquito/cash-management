@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AutofocusDirective } from 'src/app/directives/focus/autofocus.directive';
-import { AutofocusAsyncDirective } from 'src/app/directives/focus/autofocus-async.directive';
+import { FocusDirective } from 'src/app/directives/focus/focus.directive';
+import { FocusAsyncDirective } from 'src/app/directives/focus/focus-async.directive';
 
 /**
  * Modulo que contiene los artefactos comunes,
@@ -18,12 +18,12 @@ import { AutofocusAsyncDirective } from 'src/app/directives/focus/autofocus-asyn
   exports: [
     CommonModule,
     FormsModule,
-    AutofocusDirective,
-    AutofocusAsyncDirective
+    FocusDirective,
+    FocusAsyncDirective
   ],
   declarations: [
-    AutofocusDirective,
-    AutofocusAsyncDirective
+    FocusDirective,
+    FocusAsyncDirective
   ]
 })
 export class SharedCommonModule {}

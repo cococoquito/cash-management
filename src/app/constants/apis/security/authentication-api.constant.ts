@@ -1,4 +1,4 @@
-import { AppDomainConstant } from '../app-domain.constant';
+import { AppDomainConstant } from '../domains/app-domain.constant';
 
 /**
  * Clase que contiene todas las constantes de la API para el modulo de seguridad
