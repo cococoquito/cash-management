@@ -3,6 +3,8 @@ import { RouterConstant } from 'src/app/constants/router.constant';
 import { Router } from '@angular/router';
 import { SecurityService } from 'src/app/services/login/security.service';
 import { AuthenticationResponseDTO } from 'src/app/dtos/security/authentication-response.dto';
+import { SessionStorageUtil } from 'src/app/utilities/session-storage.util';
+import { TypesEventsConstants } from 'src/app/constants/types-events.constants';
 
 /**
  * Componente para la autenticacion del sistema
@@ -33,7 +35,10 @@ export class LoginComponent implements OnInit {
   public iniciarSesion(): void {
 
     this.securityService.iniciarSesion(new AuthenticationResponseDTO()).subscribe(
-      data => {
+      auth => {
+        // se almacena los datos de la autenticacion en el session
+        SessionStorageUtil.authentication(TypesEventsConstants.SET, auth);
+
         // se redirecciona a la pagina de welcome
         this.router.navigate([RouterConstant.NAVIGATE_WELCOME]);
       },

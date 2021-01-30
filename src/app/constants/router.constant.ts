@@ -20,4 +20,7 @@ export class RouterConstant {
 
   /** Constante para navegar a la pagina de BIENVENIDA */
   public static readonly NAVIGATE_WELCOME: string = `/${RouterConstant.ROUTER_AUTHENTICATED}/${RouterConstant.ROUTER_WELCOME}`;  
+
+  /** Constante para navegar a la pagina de LOGIN */
+  public static readonly NAVIGATE_LOGIN: string = `/${RouterConstant.ROUTER_LOGIN}`;   
 }

@@ -8,6 +8,7 @@ import { SelectivePreloadService } from './services/transversal/selective-preloa
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { RootComponent } from './components/root/root.component';
 import { HttpRequestInterceptor } from './interceptors/http-request.interceptor';
+import { AuthenticationGuard } from './guards/authentication.guard';
 
 /**
  * Modulo principal de la aplicacion, contiene
@@ -30,7 +31,8 @@ import { HttpRequestInterceptor } from './interceptors/http-request.interceptor'
       useClass: HttpRequestInterceptor,
       multi: true
     },
-    SelectivePreloadService
+    SelectivePreloadService,
+    AuthenticationGuard
   ],
   bootstrap: [ 
     RootComponent

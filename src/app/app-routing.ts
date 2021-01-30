@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { RouterConstant } from './constants/router.constant';
+import { AuthenticationGuard } from './guards/authentication.guard';
 
 /**
  * Constante que contiene todos los router de cada modulo del
@@ -9,11 +10,13 @@ import { RouterConstant } from './constants/router.constant';
 export const ROUTES: Routes = [
   {
     path: RouterConstant.ROUTER_LOGIN,
+    canActivate: [ AuthenticationGuard ],
     data: { preload: true },
     loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule)
   },
   {
     path: RouterConstant.ROUTER_AUTHENTICATED,
+    canActivate: [ AuthenticationGuard ],
     data: { preload: true },
     loadChildren: () => import('./modules/authenticated/authenticated.module').then(m => m.AuthenticatedModule)
   },
