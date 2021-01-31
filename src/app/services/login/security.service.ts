@@ -18,7 +18,7 @@ export class SecurityService {
   /**
    * Servicio que permite soportar el proceso de iniciar sesion
    *
-   * @param credenciales, contiene las credenciales del USER
+   * @param data, contiene las credenciales del USER
    * @return DTO con los datos inciales
    */
   public iniciarSesion(data: AuthenticationResponseDTO): Observable<AuthenticationResponseDTO> {

@@ -3,8 +3,7 @@ import { RouterConstant } from 'src/app/constants/router.constant';
 import { Router } from '@angular/router';
 import { SecurityService } from 'src/app/services/login/security.service';
 import { AuthenticationResponseDTO } from 'src/app/dtos/security/authentication-response.dto';
-import { SessionStorageUtil } from 'src/app/utilities/session-storage.util';
-import { TypesEventsConstants } from 'src/app/constants/types-events.constants';
+import { ShellService } from 'src/app/services/shell/shell.service';
 
 /**
  * Componente para la autenticacion del sistema
@@ -12,7 +11,7 @@ import { TypesEventsConstants } from 'src/app/constants/types-events.constants';
 @Component({
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [ SecurityService ],
+  providers: [ SecurityService ]
 })
 export class LoginComponent implements OnInit {
 
@@ -21,7 +20,8 @@ export class LoginComponent implements OnInit {
    */
   constructor(
     private router: Router,
-    private securityService: SecurityService) {}
+    private securityService: SecurityService,
+    private shellService: ShellService) {}
   
   /**
    * Aca se debe inicializar las variables globales del LOGIN
@@ -36,8 +36,8 @@ export class LoginComponent implements OnInit {
 
     this.securityService.iniciarSesion(new AuthenticationResponseDTO()).subscribe(
       auth => {
-        // se almacena los datos de la autenticacion en el session
-        SessionStorageUtil.authentication(TypesEventsConstants.SET, auth);
+        // se notifica que hay un nuevo inicio de sesion
+        this.shellService.singIn(auth);
 
         // se redirecciona a la pagina de welcome
         this.router.navigate([RouterConstant.NAVIGATE_WELCOME]);

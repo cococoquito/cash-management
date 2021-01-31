@@ -9,6 +9,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { RootComponent } from './components/root/root.component';
 import { HttpRequestInterceptor } from './interceptors/http-request.interceptor';
 import { AuthenticationGuard } from './guards/authentication.guard';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
 
 /**
  * Modulo principal de la aplicacion, contiene
@@ -23,7 +24,8 @@ import { AuthenticationGuard } from './guards/authentication.guard';
     RouterModule.forRoot(ROUTES, { preloadingStrategy: SelectivePreloadService }),
     HttpClientModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgIdleKeepaliveModule.forRoot()
   ],
   providers: [
     {

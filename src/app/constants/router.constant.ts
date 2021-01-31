@@ -1,5 +1,5 @@
 /**
- * Clase constante que contiene todo los ROUTER y NAVIGATE del app
+ * Clase constante que contiene todos los ROUTER y NAVIGATE del app
  */
 export class RouterConstant {
 
