@@ -13,6 +13,7 @@
 <!-- modal timeout -->
 <ng-container *ngIf="shellService.dialogTimeOut">
   <p-dialog
+    id="dialogtimeout"
     [(visible)]="shellService.dialogTimeOut.isShowDialog"
     [showHeader]="false"
     [baseZIndex]="10000"

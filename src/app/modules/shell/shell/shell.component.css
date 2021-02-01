@@ -46,6 +46,10 @@
   border: 0px;
 }
 
+:host ::ng-deep #dialogtimeout .ui-dialog-content {
+  background-color: #fff;
+}
+
 :host ::ng-deep #confApp .ui-dialog-content {
   text-align: center !important;
   height: 6em;
@@ -73,7 +77,7 @@
 }
 
 :host ::ng-deep #confApp .ui-confirmdialog {
-  width: 40em;  
+  width: 40em;
 }
 
 :host ::ng-deep .ui-toast .ui-toast-message.ui-toast-message-success {
