@@ -11,6 +11,7 @@ import { BreadCrumbService } from './bread-crumb.service';
 import { MenuService } from './menu.service';
 import { UserAccountService } from './user-account.service';
 import { ScreenService } from './screen.service';
+import { ContentComponent } from 'src/app/modules/shell/content/content.component';
 
 /**
  * Se utiliza para administrar el estado del Shell de la aplicacion
@@ -35,6 +36,9 @@ export class ShellService {
 
   /** cuenta regresiva para el timeout */
   public countdownIdle: string;
+
+  /** Es el content componente */
+  public contentComponent: ContentComponent;
 
   /**
    * @param router, se utiliza para ser notificado cuando el router cambia

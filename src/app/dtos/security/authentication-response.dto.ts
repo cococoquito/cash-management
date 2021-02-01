@@ -7,5 +7,7 @@ export class AuthenticationResponseDTO {
     public id: number;
     public user: string;
     public clave: string;
+    public name: string;
+    public rol: string;
     public itemsMenu: Array<MenuItemDTO>;
 }

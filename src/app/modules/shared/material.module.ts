@@ -6,6 +6,9 @@ import { MatStepperModule } from '@angular/material/stepper';
  * para trabajar con los componentes de angualar material
  */
 @NgModule({
+  imports: [
+    MatStepperModule
+  ],
   exports: [
     MatStepperModule
   ]

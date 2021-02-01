@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './authenticated-routing';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ShellModule } from '../shell/shell.module';
+import { SharedModule } from '../shared/shared.module';
 
 /**
  * Modulo que contiene todos los artefactos que el usuario
@@ -9,7 +11,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
  */
 @NgModule({
   imports: [
-    RouterModule.forChild(ROUTES)
+    RouterModule.forChild(ROUTES),
+    ShellModule,
+    SharedModule
   ],
   declarations: [
     WelcomeComponent

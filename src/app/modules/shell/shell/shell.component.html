@@ -1,0 +1,37 @@
+<app-content> </app-content>
+<p-confirmDialog id="confApp" icon="pi pi-exclamation-triangle" #cd>
+  <p-footer>
+    <button class="btn-si" type="button" pButton icon="pi pi-check" label="Si" (click)="cd.accept()"></button>
+    <button class="btn-no" type="button" pButton icon="pi pi-times" label="No" (click)="cd.reject()"></button>
+  </p-footer>
+</p-confirmDialog>
+<p-toast [style]="{marginTop: '80px'}" position="bottom-center" key="toast"></p-toast>
+<p-toast #toastLonger id="toastExtraLong" position="bottom-center" key="toastExtraLong"></p-toast>
+<p-toast #toastLonger id="toastLonger" position="bottom-center" key="toastLonger"></p-toast>
+<p-toast #toastMedium id="toastMedium" position="bottom-center" key="toastMedium"></p-toast>
+
+<!-- modal timeout -->
+<ng-container *ngIf="shellService.dialogTimeOut">
+  <p-dialog
+    [(visible)]="shellService.dialogTimeOut.isShowDialog"
+    [showHeader]="false"
+    [baseZIndex]="10000"
+    [style]="{ width: '35vw' }"
+    position="top"
+    modal="true">
+    
+    <div class="ui-g">
+      <div class="ui-md-12 mb-3 border-bottom text-center font-weight-bold">
+        <span class="ui-messages-detail font-size-22">Has estado inactivo</span>
+      </div>
+      <div class="ui-md-12 text-center mb-2">
+        <span class="ui-messages-detail font-size-16">Cierre de sesión en <strong>{{ shellService.countdownIdle }} segundos!</strong></span>
+      </div>
+      <div class="ui-g-12 text-center pt-0">
+        <button (click)="shellService.stay()" type="button" class="btn btn-sm btn-success w-150-px btn-app">
+          <label class="btn-size-admin"><i class="fa fa-user-circle-o"></i> Permanecer</label>
+        </button>
+      </div>
+    </div>
+  </p-dialog>
+</ng-container>
