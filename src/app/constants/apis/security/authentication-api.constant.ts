@@ -13,4 +13,9 @@ export class AuthenticationAPIConstant {
     AppDomainConstant.URI_GATEWAY +
     AuthenticationAPIConstant.AUTHENTICATION_API +
     'login';
+
+  /** URL del recurso para consulta de los registros de pruebas */
+  static readonly URL_GET_RECORDS_TEST: string =
+    AppDomainConstant.URI_GATEWAY +
+    'escrutinio/calendarioSorteo/consultarCalendario';    
 }

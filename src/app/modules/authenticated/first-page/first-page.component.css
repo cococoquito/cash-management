@@ -1,0 +1,13 @@
+.pnl1 {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.head {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 40px;
+    background-color: #f6f8f8;
+    padding: 10px;
+    font-weight: bold;
+}

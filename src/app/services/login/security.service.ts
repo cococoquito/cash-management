@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { AuthenticationResponseDTO } from 'src/app/dtos/security/authentication-response.dto';
 import { AuthenticationAPIConstant } from 'src/app/constants/apis/security/authentication-api.constant';
+import { PaginationResponseDTO } from 'src/app/dtos/transversal/pagination-response.dto';
+import { CalendarioSorteoDTO } from 'src/app/dtos/security/calendario-sorteo.dto';
 
 /**
  * Clase que contiene los procesos de negocio para la autenticacion en el sistema
@@ -27,4 +29,14 @@ export class SecurityService {
       data
     );
   }
+
+  /**
+   * Permite obtener los horarios parametrizados en el sistema
+   */
+  public getHorarios(filter : CalendarioSorteoDTO): Observable<PaginationResponseDTO> {
+    return this.http.post<PaginationResponseDTO>(
+      AuthenticationAPIConstant.URL_GET_RECORDS_TEST,
+      filter
+    );
+  }  
 }
