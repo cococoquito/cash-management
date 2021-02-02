@@ -128,7 +128,7 @@ export class ShellService {
   private initIdle(): void {
 
     // se configura el tiempo del timeout por 15 minutos
-    this.idle.setIdle(900);
+    this.idle.setIdle(5);
 
     // se configura el timeout periodo
     this.idle.setTimeout(15);

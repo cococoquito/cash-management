@@ -4,6 +4,7 @@ import { ROUTES } from './authenticated-routing';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ShellModule } from '../shell/shell.module';
 import { SharedModule } from '../shared/shared.module';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 /**
  * Modulo que contiene todos los artefactos que el usuario
@@ -16,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule
   ],
   declarations: [
-    WelcomeComponent
+    WelcomeComponent,
+    FirstPageComponent
   ],
   providers: [
   ]
